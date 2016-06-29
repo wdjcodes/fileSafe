@@ -550,7 +550,7 @@ void file_crypt(crypt_t *cInfo)
 			curr_byte += count;
 			total_count += count;
 			assert(count <= BUFF_SIZE);
-			count % 2 == 0 ? : count++;		//Count will only be odd if this is the last read and there are an odd number bytes
+			count % 2 == 0 ? 0 : count++;		//Count will only be odd if this is the last read and there are an odd number bytes
 			half_count = count/2;
 			for(i = 0; i < half_count; i++)
 			{
@@ -584,7 +584,7 @@ void file_crypt(crypt_t *cInfo)
 			curr_byte+=count;
 			assert(count <= BUFF_SIZE);
 			in[count] = '\0';
-			count % 2 == 0 ? : count++;
+			count % 2 == 0 ? 0 : count++;
 			half_count = count/2;
 			for(i = 0; i<half_count; i++)
 			{
